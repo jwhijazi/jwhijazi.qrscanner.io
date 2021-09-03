@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:57959/'
+  baseUrl: 'http://mohdmo-001-site1.itempurl.com/'
 };
