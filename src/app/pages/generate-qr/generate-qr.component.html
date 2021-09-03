@@ -1,0 +1,41 @@
+<div class="text-center h5">
+    Enter Your Data
+</div>
+<div class="card card-body">
+    <div class="d-flex flex-row flex-wrap">
+        <div class="col-md-5">
+            <div class="fw-bold">University ID</div>
+            <input type="text" class="form-control" [(ngModel)]="uniId">
+
+            <div class="fw-bold">Document ID</div>
+            <input type="text" class="form-control" [(ngModel)]="docId">
+
+            <div class="fw-bold">Student Number</div>
+            <input type="text" class="form-control" [(ngModel)]="studentId">
+
+            <div class="my-1">
+                <button class="btn btn-primary" (click)="generate()">
+                    Generate QR Image
+                </button>
+            </div>
+        </div>
+
+        <div class="mx-2 flex-fill">
+            <div *ngIf="result">
+                <div class="fw-bold">Message:</div>
+                <textarea class="form-control" readonly col="40" rows="5" [value]="result.message"></textarea>
+
+                <div class="fw-bold">Digital Signature:</div>
+                <textarea class="form-control" readonly col="40" rows="5" [value]="result.signature"></textarea>
+
+                <div class="fw-bold">QR Image:</div>
+                <div class="text-center">
+                    <img [src]="result.qr" width="200">
+                </div>
+                <div class="text-center my-1">
+                    <button class="btn btn-success btn-sm" (click)="scanAndVerify(result.message, result.signature)">Scan And Verify</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

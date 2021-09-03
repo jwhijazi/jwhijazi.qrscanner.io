@@ -1,0 +1,25 @@
+<div class="text-center">
+    <img src="assets/logo.jpg" width="120">
+</div>
+<div class="text-center h5">
+    
+    Your Verification Result
+</div>
+<div class="alert alert-danger fw-bold text-center" *ngIf="error">
+    {{error}}
+</div>
+
+<div *ngIf="!error">
+    <div class="fw-bold">Message:</div>
+                <textarea class="form-control" readonly col="40" rows="5" [value]="message"></textarea>
+
+                <div class="fw-bold">Digital Signature:</div>
+                <textarea class="form-control" readonly col="40" rows="5" [value]="signautre"></textarea>
+    <hr>
+    <div class="card card-body" *ngIf="msg">
+        <div class="fw-bold">Verification Result:</div>
+        <div class="alert" [class.alert-success]="verified" [class.alert-danger]="!verified">
+            {{msg}}
+        </div>
+    </div>
+</div>
